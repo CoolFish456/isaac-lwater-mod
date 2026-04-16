@@ -12,7 +12,7 @@ function LWaterMod:oneLWaterEvaluateCache (mod, flag)
         if flag == CacheFlag.CACHE_FIREDELAY then
             local addition = 0.35
             -- 修正，射速和射击延迟的换算见wiki
-            player.MaxFireDelay = 30 / (30 / (player.MaxFireDelay + 1) + addition * multiplier) - 1
+            LWaterMod:changePlayerFireRate(addition,multiplier)
         end
     end
 end

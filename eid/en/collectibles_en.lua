@@ -14,9 +14,9 @@ EIDAddItem(ItemID.ganShenMe,{
 })
 EIDAddItem(ItemID.classicTasteShavedIce,{
     Name="Classic Taste Shaved Ice",
-    Descriptions=[[#{{Tears}} {{ArrowUp}}+0.7 tears
+    Descriptions=[[#{{Tears}} {{ArrowUp}}+0.5 tears
     #{{Speed}} {{ArrowDown}}-0.3 speed
-    #Frozen tears
+    #20% chance to trigger frozen tears, not affected by luck
     ]]
 })
 EIDAddItem(ItemID.oneLWater,{

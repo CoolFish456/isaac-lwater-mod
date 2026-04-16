@@ -14,15 +14,15 @@ EIDAddItem(ItemID.ganShenMe,{
 })
 EIDAddItem(ItemID.classicTasteShavedIce,{
     Name="老味刨冰",
-    Descriptions=[[#{{Tears}} {{ArrowUp}}+0.7射速
+    Descriptions=[[#{{Tears}} {{ArrowUp}}+0.5射速修正
     #{{Speed}} {{ArrowDown}}-0.3移速
-    #冰冻泪弹
+    #有20%的概率触发冰冻泪弹，不受幸运影响
     ]]
 })
 EIDAddItem(ItemID.oneLWater,{
     Name="1L水",
     Descriptions=[[{{SoulHeart}} +1魂心
-    #{{Tears}} {{ArrowUp}}+0.35射速修正
+    #{{Tears}} {{ArrowUp}}+0.2射速修正
     #发射泪弹有20%概率在泪弹飞行过程中留下绿色水迹
     #{{Luck}} 幸运15：75%概率
     ]]
