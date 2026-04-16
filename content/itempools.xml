@@ -1,0 +1,26 @@
+<ItemPools>
+    <Pool Name="treasure">
+        <Item Name="1L Water" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+        <Item Name="Virtual Share" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+        <Item Name="Somebody's Quotation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+        <Item Name="Classic Taste Shaved Ice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+    </Pool>
+    <Pool Name="boss">
+        <Item Name="1L Water" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+        <Item Name="Classic Taste Shaved Ice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+    </Pool>
+    <Pool Name="curse">
+        <Item Name="Gan Shen Me!" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+        <Item Name="Virtual Share" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+        <Item Name="Lil' Hina" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+    </Pool>
+    <Pool Name="devil">
+        <Item Name="Gan Shen Me!" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+        <Item Name="Lil' Hina" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+    </Pool>
+    <Pool Name="redChest">
+        <Item Name="Gan Shen Me!" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+        <Item Name="Virtual Share" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+        <Item Name="Lil' Hina" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+    </Pool>
+</ItemPools>

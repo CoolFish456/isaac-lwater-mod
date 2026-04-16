@@ -1,0 +1,14 @@
+<items gfxroot="gfx/lwater/items/" version="1">
+    <active id="1" name="Gan Shen Me!" gfx="ganshenme_item.png" description="Use her 'til she cried meow meow (anger face)" quality="3" maxcharges="4" tags="guppy offensive" devilprice="1" cache="all"/>
+    <passive id="2" name="1L Water" gfx="onelwater_item.png" description="Da Jia Duo He Da Shui" quality="2" tags="offensive summonable nocantrip" cache="all"/>
+    <passive id="3" name="Virtual Share" gfx="virtualshare_item.png" description="Just in simulator" quality="1" tags="offensive summonable nocantrip" cache="all"/>
+    <passive id="4" name="Somebody's Quotation" gfx="_placeholder.png" description="Mute those sender plz" quality="4" tags="offensive summonable nocantrip" cache="all"/>
+    <passive id="5" name="Classic Taste Shaved Ice" gfx="classictasteshavedice_item.png" description="Eating ice is not harmful..." quality="3" tags="offensive summonable nocantrip " cache="all"/>
+    <active id="6" name="Koishi's Hat" gfx="_placeholder.png" description="Stop putting hats on me" quality="2" maxcharges="120" chargetype="timed" tags="offensive summonable nocantrip" cache="all"/>
+    <passive id="7" name="Kagiyama Hina's Headband" gfx="_placeholder.png" description="A feeling of wanting to spin" quality="1" tags="offensive summonable" cache="all"/>
+    <passive id="8" name="Stop Female Clothing" gfx="_placeholder.png" description="How dare you?!" quality="0" tags="offensive summonable nocantrip" cache="all"/>
+    <passive id="9" name="2L Water" gfx="_placeholder.png" description="Double as before" quality="2" tags="offensive summonable nocantrip" cache="all"/>
+    <passive id="10" name="5L Water" gfx="_placeholder.png" description="No way..." quality="4" tags="offensive summonable nocantrip" cache="all"/>
+    <active id="11" name="The Past History of ** Univ." gfx="_placeholder.png" description="???" quality="2" maxcharges="6" tags="offensive summonable" cache="all"/>
+    <passive id="12" name="Lil' Hina" gfx="_placeholder.png" description="Spin me harder" quality="2" tags="offensive summonable nocantrip baby" cache="all"/>
+</items>

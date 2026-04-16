@@ -1,0 +1,5 @@
+<sounds root="sfx/">
+    <sound name="Orin Cries">
+		<sample weight="1" path="orin.wav" />
+	</sound>
+</sounds>
