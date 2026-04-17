@@ -41,6 +41,25 @@ EIDAddItem(ItemID.virtualShare,{
     #在进入下一层时，有40%的概率翻倍你的硬币数量，有50%的概率减少一半的硬币数量，有10%的概率失去所有硬币
     ]]
 })
+EIDAddItem(ItemID.koishisHat,{
+    Name="恋恋的帽子",
+    Descriptions=[[{{Battery}}充能时间7秒
+    #使用时，丢出一个恋恋的帽子，对路径上的敌人造成每秒5次，每次3.5点的伤害并造成少量击退
+    #飞出一定距离或碰到墙壁后飞回玩家手中，飞出距离取决于玩家的{{Range}}射程
+    ]]
+})
+EIDAddItem(ItemID.stopFemaleClothing,{
+    Name="不准女装",
+    Descriptions=[[拾取时，移除玩家身上所有含有{{Mom}}“妈妈”标签的道具
+    #本局游戏内也无法遇见这些道具
+    ]]
+})
+EIDAddItem(ItemID.lilHina,{
+    Name="雏人偶宝宝",
+    Descriptions=[[获得“雏人偶宝宝”跟班
+    #“雏人偶宝宝”跟班跟随角色，角色攻击时，每隔3秒进行自转，向周围随机喷洒大量泪弹，造成4.5点伤害
+    ]]
+})
 
 
 local language = "zh_cn"

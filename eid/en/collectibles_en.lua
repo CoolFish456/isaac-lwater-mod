@@ -41,6 +41,25 @@ EIDAddItem(ItemID.virtualShare,{
     #When entering the next floor, there is a 40% chance to double your coins, a 50% chance to reduce your coins by half, and a 10% chance to lose all your coins
     ]]
 })
+EIDAddItem(ItemID.koishisHat,{
+    Name="Koishi's Hat",
+    Descriptions=[[{{Battery}} Charge time 7 seconds
+    #When used, throw a Koishi's Hat that deals 3.5 damage per hit and causes minor knockback to enemies on the path every 0.2 seconds
+    #The hat will fly back to the player's hand after flying a certain distance or hitting a wall, and the flying distance depends on the player's {{Range}} range
+    ]]
+})
+EIDAddItem(ItemID.stopFemaleClothing,{
+    Name="Stop Female Clothing",
+    Descriptions=[[Remove all items with the {{Mom}} "Mom" tag from the player when picked up
+    #These items will also not appear in the current run
+    ]]
+})
+EIDAddItem(ItemID.lilHina,{
+    Name="Lil' Hina",
+    Descriptions=[[Gain the "Lil' Hina" follower
+    #The "Lil' Hina" follower follows the character and sprays a large number of tears around every 3 seconds when the character attacks, dealing 4.5 damage
+    ]]
+})
 
 
 local language = "en_us"

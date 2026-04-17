@@ -8,6 +8,7 @@ include("scripts.items.onelwater")
 include("scripts.items.virtualshare")
 include("scripts.items.somebodysquotation")
 include("scripts.items.classictasteshavedice")
+include("scripts.items.stopfemaleclothing")
 -- sfx
 include("scripts.sfx.modsound")
 -- EID
