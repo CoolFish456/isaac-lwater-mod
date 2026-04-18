@@ -22,7 +22,7 @@ EIDAddItem(ItemID.oneLWater,{
     Name="1L水",
     Descriptions=[[{{SoulHeart}} +1魂心
     #{{Tears}} {{ArrowUp}}+0.2射速修正
-    #发射泪弹有20%概率在泪弹飞行过程中留下绿色水迹
+    #发射泪弹有12%概率在泪弹飞行过程中留下绿色水迹
     #{{Luck}} 幸运15：75%概率
     ]]
 })

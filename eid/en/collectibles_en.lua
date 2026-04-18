@@ -23,7 +23,7 @@ EIDAddItem(ItemID.oneLWater,{
     Name="1L Water",
     Descriptions=[[{{SoulHeart}} +1 soul heart
     #{{Tears}} {{ArrowUp}}+0.35 tears
-    #20% chance to leave a green water trail when firing tears
+    #12% chance to leave a green water trail when firing tears
     #{{Luck}} luck 15：75% possibility
     ]]
 })

@@ -44,21 +44,35 @@ function LWaterMod:oneLWaterTearCreep(tearEntity)
     if not data.oneLWaterTearShouldCreep then
         return
     end
+    -- 初始化
+    if data.creepCounter == nil then
+        data.creepCounter = 0
+    end
+    data.creepCounter = data.creepCounter + 1
     local player=Isaac.GetPlayer()
-    local rng = RNG()
-    rng:SetSeed(Random(), RECOMMENDED_SHIFT_IDX)
+    -- local rng = RNG()
+    -- rng:SetSeed(Random(), RECOMMENDED_SHIFT_IDX)
     if player:HasCollectible(ItemID.oneLWater) then
-        local tearCreepRNG = rng:RandomInt(6)
-        if tearCreepRNG >= 3 then
-            local tearCreepTrail = Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.PLAYER_CREEP_GREEN, 0, tearEntity.Position, Vector.Zero, player)
+        -- local tearCreepRNG = rng:RandomInt(6)
+        -- if tearCreepRNG >= 4 then
+        if data.creepCounter >= 4 then
+            local tearCreepTrail = Isaac.Spawn(
+                EntityType.ENTITY_EFFECT,
+                EffectVariant.PLAYER_CREEP_GREEN,
+                0,
+                tearEntity.Position,
+                Vector.Zero,
+                player
+            )
             tearCreepTrail:ClearEntityFlags(EntityFlag.FLAG_APPEAR)
+            data.creepCounter = 0
         end
     end
 end
 
 ---@param tearEntity EntityTear
 function LWaterMod:oneLWaterTearCreepGen(tearEntity)
-    -- 在泪弹生成时，决定是否生成水迹（1/4）
+    -- 在泪弹生成时，决定是否生成水迹
     local player = Isaac.GetPlayer()
     if not player:HasCollectible(ItemID.oneLWater) then
         return
@@ -66,7 +80,7 @@ function LWaterMod:oneLWaterTearCreepGen(tearEntity)
     -- 计算 Luck → 概率（线性插值）
     local luck = player.Luck
     local clampedLuck = math.max(0, math.min(luck, 15))  -- 限制在 0~15
-    local probability = 0.20 + (0.75 - 0.20) * (clampedLuck / 10)  -- 20% → 75%
+    local probability = 0.12 + (0.75 - 0.12) * (clampedLuck / 10)  -- 12% → 75%
     -- 使用 RNG() 生成随机数
     local rng = RNG()
     rng:SetSeed(Random(), RECOMMENDED_SHIFT_IDX)
@@ -76,6 +90,7 @@ function LWaterMod:oneLWaterTearCreepGen(tearEntity)
     -- 结果写入tearEntity的GetData()表中，供MC_POST_TEAR_UPDATE时读取
     local data = tearEntity:GetData()
     data.oneLWaterTearShouldCreep = shouldCreep
+    data.creepCounter = 0
 end
 
 LWaterMod:AddCallback(ModCallbacks.MC_POST_TEAR_INIT,LWaterMod.oneLWaterTearCreepGen)
