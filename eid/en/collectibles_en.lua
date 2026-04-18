@@ -60,7 +60,13 @@ EIDAddItem(ItemID.lilHina,{
     #The "Lil' Hina" follower follows the character and sprays a large number of tears around every 3 seconds when the character attacks, dealing 4.5 damage
     ]]
 })
-
+EIDAddItem(ItemID.snakebite,{
+    Name="蛇咬",
+    Descriptions=[[After use, all enemies in the room are inflicted with 2 seconds of {{Poison}} poison effect
+    #{{Poison}} The poison effect: deals 7 damage each time
+    #{{Warning}} No effect on bosses
+    ]]
+})
 
 local language = "en_us"
 local descriptions = EID.descriptions[language]

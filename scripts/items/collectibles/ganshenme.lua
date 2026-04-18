@@ -1,8 +1,8 @@
 local RECOMMENDED_SHIFT_IDX = 35
 GanShenMeGuppyFlag=false
 
-function LWaterMod:ganShenMeUse ()
-    local player=Isaac.GetPlayer()
+function LWaterMod:ganShenMeUse (collectibleID, rngObj, player, useFlags, activeSlot, varData)
+    -- local player=Isaac.GetPlayer()
     if not player:HasCollectible(ItemID.ganShenMe) then
         return
     end

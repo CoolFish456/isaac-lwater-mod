@@ -14,7 +14,7 @@
     <passive id="7" name="Kagiyama Hina's Headband" gfx="_placeholder.png" description="A feeling of wanting to spin" quality="1" tags="offensive summonable" cache="all"/>
     <!-- Not Registered -->
     <passive id="8" name="Stop Female Clothing" gfx="stopfemaleclothing_item.png" description="How dare you?!" quality="1" tags="offensive summonable nocantrip" cache="all"/>
-    <!-- Registered -->
+    <!-- Done -->
     <passive id="9" name="2L Water" gfx="_placeholder.png" description="Double as before" quality="2" tags="offensive summonable nocantrip" cache="all"/>
     <!-- Not Registered -->
     <passive id="10" name="5L Water" gfx="_placeholder.png" description="No way..." quality="4" tags="offensive summonable nocantrip" cache="all"/>
@@ -29,6 +29,6 @@
     <!-- Not Registered -->
     <passive id="15" name="Coolheaded" gfx="_placeholder.png" description="You're out of control, just calm down" quality="3" tags="summonable nocantrip" cache="all"/>
     <!-- Not Registered -->
-    <active id="16" name="Snakebite" gfx="_placeholder.png" description="Retain. Apply 7 poison" quality="1" tags="summonable offensive" cache="all" maxcharges="2"/>
-    <!-- Not Registered -->
+    <active id="16" name="Snakebite" gfx="snakebite_item.png" description="Retain. Apply 7 poison" quality="2" tags="summonable offensive" cache="all" maxcharges="2" shopprice="15"/>
+    <!-- Done -->
 </items>

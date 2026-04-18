@@ -6,6 +6,10 @@
         <Item Name="Classic Taste Shaved Ice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
         <Item Name="Koishi's Hat" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
         <Item Name="Stop Female Clothing" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+        <Item Name="Snakebite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+    </Pool>
+    <Pool Name="shop">
+        <Item Name="Snakebite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
     <Pool Name="boss">
         <Item Name="1L Water" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -45,6 +49,7 @@
         <Item Name="Classic Taste Shaved Ice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
         <Item Name="Koishi's Hat" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
         <Item Name="Stop Female Clothing" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+        <Item Name="Snakebite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
     <Pool Name="greedShop">
         <Item Name="1L Water" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -52,6 +57,7 @@
         <Item Name="Somebody's Quotation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
         <Item Name="Classic Taste Shaved Ice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
         <Item Name="Koishi's Hat" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+        <Item Name="Snakebite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
     <Pool Name="greedCurse">
         <Item Name="Gan Shen Me!" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>

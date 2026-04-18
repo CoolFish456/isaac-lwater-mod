@@ -59,6 +59,13 @@ EIDAddItem(ItemID.lilHina,{
     #“雏人偶宝宝”跟班跟随角色，角色攻击时，每隔3秒进行自转，向周围随机喷洒大量泪弹，造成4.5点伤害
     ]]
 })
+EIDAddItem(ItemID.snakebite,{
+    Name="蛇咬",
+    Descriptions=[[使用后，对所有的敌怪赋予2秒{{Poison}}中毒效果
+    #{{Poison}} 中毒效果：每次造成7点伤害
+    #{{Warning}} 对头目无效
+    ]]
+})
 
 
 local language = "zh_cn"

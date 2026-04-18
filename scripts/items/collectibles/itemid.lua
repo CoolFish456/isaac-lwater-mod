@@ -9,4 +9,6 @@ ItemID = {
     stopFemaleClothing = Isaac.GetItemIdByName("Stop Female Clothing"),
 
     lilHina = Isaac.GetItemIdByName("Lil' Hina"),
+
+    snakebite = Isaac.GetItemIdByName("Snakebite"),
 }
