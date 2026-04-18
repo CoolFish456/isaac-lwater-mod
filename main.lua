@@ -1,14 +1,8 @@
 LWaterMod = RegisterMod("L Water",1)
 -- put your scripts here
--- item
-include("scripts.items.itemid")
+include("scripts.items.collectibles.itemid")
 include("scripts.lib.tearfiredelay")
-include("scripts.items.ganshenme")
-include("scripts.items.onelwater")
-include("scripts.items.virtualshare")
-include("scripts.items.somebodysquotation")
-include("scripts.items.classictasteshavedice")
-include("scripts.items.stopfemaleclothing")
+include("scripts.enums")
 -- sfx
 include("scripts.sfx.modsound")
 -- EID

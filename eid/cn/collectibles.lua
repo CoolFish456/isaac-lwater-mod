@@ -1,4 +1,3 @@
--- Item
 local ItemEID = {}
 local function EIDAddItem(id, content)
     if id then

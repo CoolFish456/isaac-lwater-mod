@@ -13,7 +13,7 @@
     <!-- Registered -->
     <passive id="7" name="Kagiyama Hina's Headband" gfx="_placeholder.png" description="A feeling of wanting to spin" quality="1" tags="offensive summonable" cache="all"/>
     <!-- Not Registered -->
-    <passive id="8" name="Stop Female Clothing" gfx="stopfemaleclothing_item.png" description="How dare you?!" quality="0" tags="offensive summonable nocantrip" cache="all"/>
+    <passive id="8" name="Stop Female Clothing" gfx="stopfemaleclothing_item.png" description="How dare you?!" quality="1" tags="offensive summonable nocantrip" cache="all"/>
     <!-- Registered -->
     <passive id="9" name="2L Water" gfx="_placeholder.png" description="Double as before" quality="2" tags="offensive summonable nocantrip" cache="all"/>
     <!-- Not Registered -->
@@ -21,12 +21,14 @@
     <!-- Not Registered -->
     <active id="11" name="The Past History of ** Univ." gfx="_placeholder.png" description="???" quality="2" maxcharges="6" tags="offensive summonable" cache="all"/>
     <!-- Not Registered -->
-    <passive id="12" name="Lil' Hina" gfx="_placeholder.png" description="Spin me harder" quality="2" tags="offensive summonable nocantrip baby" cache="all" devilprice="1"/>
+    <familiar id="12" name="Lil' Hina" gfx="_placeholder.png" description="Spin me harder" quality="2" tags="offensive summonable nocantrip baby" cache="all" devilprice="1"/>
     <!-- Registered -->
-    <active id="13" name="500mL Water" gfx="_placeholder.png" description="Take a drink" quality="1" tags="summonable" cache="all"/>
+    <active id="13" name="500mL Water" gfx="_placeholder.png" description="Take a drink" quality="1" tags="summonable" cache="all" maxcharges="1"/>
     <!-- Not Registered -->
-    <active id="14" name="Empty Plastic Bottle" gfx="_placeholder.png" description="Something like junk" quality="0" tags="summonable" cache="all"/>
+    <active id="14" name="Empty Plastic Bottle" gfx="_placeholder.png" description="Something like junk" quality="0" tags="summonable" cache="all" maxcharges="4"/>
     <!-- Not Registered -->
     <passive id="15" name="Coolheaded" gfx="_placeholder.png" description="You're out of control, just calm down" quality="3" tags="summonable nocantrip" cache="all"/>
+    <!-- Not Registered -->
+    <active id="16" name="Snakebite" gfx="_placeholder.png" description="Retain. Apply 7 poison" quality="1" tags="summonable offensive" cache="all" maxcharges="2"/>
     <!-- Not Registered -->
 </items>
