@@ -1,8 +1,12 @@
-function LWaterMod:classicTasteShavedIceEvaluateCache (mod, flag)
+local classicTasteShavedIce = {}
+classicTasteShavedIce.name = "Classic Taste Shaved Ice"
+classicTasteShavedIce.ID = Isaac.GetItemIdByName("Classic Taste Shaved Ice")
+
+function classicTasteShavedIce:classicTasteShavedIceEvaluateCache (mod, flag)
     -- 改变属性：+0.5射速修正，-0.3移速
     local player=Isaac.GetPlayer()
-    local multiplier = player:GetCollectibleNum(ItemID.classicTasteShavedIce)
-    if player:HasCollectible(ItemID.classicTasteShavedIce) then
+    local multiplier = player:GetCollectibleNum(classicTasteShavedIce.ID)
+    if player:HasCollectible(classicTasteShavedIce.ID) then
         if flag == CacheFlag.CACHE_FIREDELAY then
             local addition = 0.5
             LWaterMod:changePlayerFireRate(addition,multiplier)
@@ -14,17 +18,17 @@ function LWaterMod:classicTasteShavedIceEvaluateCache (mod, flag)
     end
 end
 
-LWaterMod:AddCallback(ModCallbacks.MC_EVALUATE_CACHE,LWaterMod.classicTasteShavedIceEvaluateCache)
+LWaterMod:AddCallback(ModCallbacks.MC_EVALUATE_CACHE,classicTasteShavedIce.classicTasteShavedIceEvaluateCache)
 
 local RECOMMENDED_SHIFT_IDX = 35
 
 ---@param tearEntity EntityTear
-function LWaterMod:classicTasteShavedIceTearEffect(tearEntity)
+function classicTasteShavedIce:classicTasteShavedIceTearEffect(tearEntity)
     -- TODO：20%的概率触发冰冻泪弹
     local player = Isaac.GetPlayer()
     local rng = RNG()
     rng:SetSeed(Random(), RECOMMENDED_SHIFT_IDX)
-    if not player:HasCollectible(ItemID.classicTasteShavedIce) then
+    if not player:HasCollectible(classicTasteShavedIce.ID) then
         return
     end
     local iceTearEffect= rng:RandomInt(4)
@@ -34,4 +38,6 @@ function LWaterMod:classicTasteShavedIceTearEffect(tearEntity)
     end
 end
 
-LWaterMod:AddCallback(ModCallbacks.MC_POST_FIRE_TEAR,LWaterMod.classicTasteShavedIceTearEffect)
+LWaterMod:AddCallback(ModCallbacks.MC_POST_FIRE_TEAR,classicTasteShavedIce.classicTasteShavedIceTearEffect)
+
+return classicTasteShavedIce

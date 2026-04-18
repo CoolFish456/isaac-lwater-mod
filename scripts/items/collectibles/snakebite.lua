@@ -1,7 +1,11 @@
-function LWaterMod:snakebiteUse(collectibleID, rngObj, player, useFlags, activeSlot, varData)
+local snakebite = {}
+snakebite.name = "Snakebite"
+snakebite.ID = Isaac.GetItemIdByName("Snakebite")
+
+function snakebite:snakebiteUse(collectibleID, rngObj, player, useFlags, activeSlot, varData)
     -- 使用后，对所有的敌怪赋予2秒中毒
         -- local player=Isaac.GetPlayer()
-        if not player:HasCollectible(ItemID.snakebite) then
+        if not player:HasCollectible(snakebite.ID) then
             return
         end
         local entities=Isaac.GetRoomEntities()
@@ -18,4 +22,6 @@ function LWaterMod:snakebiteUse(collectibleID, rngObj, player, useFlags, activeS
         }
 end
 
-LWaterMod:AddCallback(ModCallbacks.MC_USE_ITEM,LWaterMod.snakebiteUse,ItemID.snakebite)
+LWaterMod:AddCallback(ModCallbacks.MC_USE_ITEM,snakebite.snakebiteUse,snakebite.ID)
+
+return snakebite

@@ -1,9 +1,12 @@
+local ganShenMe = {}
+ganShenMe.name = "Gan Shen Me!"
+ganShenMe.ID = Isaac.GetItemIdByName("Gan Shen Me!")
 local RECOMMENDED_SHIFT_IDX = 35
 GanShenMeGuppyFlag=false
 
-function LWaterMod:ganShenMeUse (collectibleID, rngObj, player, useFlags, activeSlot, varData)
+function ganShenMe:ganShenMeUse (collectibleID, rngObj, player, useFlags, activeSlot, varData)
     -- local player=Isaac.GetPlayer()
-    if not player:HasCollectible(ItemID.ganShenMe) then
+    if not player:HasCollectible(ganShenMe.ID) then
         return
     end
     local sfx = SFXManager()
@@ -20,11 +23,12 @@ function LWaterMod:ganShenMeUse (collectibleID, rngObj, player, useFlags, active
     }
 end
 
-LWaterMod:AddCallback(ModCallbacks.MC_USE_ITEM,LWaterMod.ganShenMeUse,ItemID.ganShenMe)
+LWaterMod:AddCallback(ModCallbacks.MC_USE_ITEM,ganShenMe.ganShenMeUse,ganShenMe.ID)
 
-function LWaterMod:ganShenMePostNewRoom()
+function ganShenMe:ganShenMePostNewRoom()
+    -- 已知问题：在没有猫套的情况下，如果在房间内使用本道具并丢弃后离开该房间，猫套的外观仍然存在的问题
     local player=Isaac.GetPlayer()
-    if not player:HasCollectible(ItemID.ganShenMe) then
+    if not player:HasCollectible(ganShenMe.ID) then
         return
     end
     GanShenMeGuppyFlag=false
@@ -33,11 +37,11 @@ function LWaterMod:ganShenMePostNewRoom()
     player.EvaluateItems(player)
 end
 
-LWaterMod:AddCallback(ModCallbacks.MC_POST_NEW_ROOM,LWaterMod.ganShenMePostNewRoom)
+LWaterMod:AddCallback(ModCallbacks.MC_POST_NEW_ROOM,ganShenMe.ganShenMePostNewRoom)
 
-function LWaterMod:ganShenMeEvaluateCache(mod, flag)
+function ganShenMe:ganShenMeEvaluateCache(mod, flag)
     local player=Isaac.GetPlayer()
-    if not player:HasCollectible(ItemID.ganShenMe) then
+    if not player:HasCollectible(ganShenMe.ID) then
         return
     end
     if GanShenMeGuppyFlag == true then
@@ -51,12 +55,12 @@ function LWaterMod:ganShenMeEvaluateCache(mod, flag)
     end
 end
 
-LWaterMod:AddCallback(ModCallbacks.MC_EVALUATE_CACHE,LWaterMod.ganShenMeEvaluateCache)
+LWaterMod:AddCallback(ModCallbacks.MC_EVALUATE_CACHE,ganShenMe.ganShenMeEvaluateCache)
 
 -- fake guppy transformation
-function LWaterMod:AddGuppyEffect(entity)
+function ganShenMe:AddGuppyEffect(entity)
     local player=Isaac.GetPlayer()
-    if not player:HasCollectible(ItemID.ganShenMe) then
+    if not player:HasCollectible(ganShenMe.ID) then
         return
     end
     if GanShenMeGuppyFlag == true then
@@ -71,5 +75,7 @@ function LWaterMod:AddGuppyEffect(entity)
     end
 end
 
-LWaterMod:AddCallback(ModCallbacks.MC_ENTITY_TAKE_DMG,LWaterMod.AddGuppyEffect)
+LWaterMod:AddCallback(ModCallbacks.MC_ENTITY_TAKE_DMG,ganShenMe.AddGuppyEffect)
+
+return ganShenMe
 

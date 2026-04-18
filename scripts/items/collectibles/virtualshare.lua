@@ -1,14 +1,18 @@
-function LWaterMod:virtualShareGet ()
+local virtualShare = {}
+virtualShare.name = "Virtual Share"
+virtualShare.ID = Isaac.GetItemIdByName("Virtual Share")
+
+function virtualShare:virtualShareGet ()
     local player=Isaac.GetPlayer()
     player:AddCoins(15)
 end
 
-LWaterMod:AddCallback(ModCallbacks.MC_POST_ADD_COLLECTIBLE,LWaterMod.virtualShareGet,ItemID.virtualShare)
+LWaterMod:AddCallback(ModCallbacks.MC_POST_ADD_COLLECTIBLE,virtualShare.virtualShareGet,virtualShare.ID)
 
-function LWaterMod:virtualShareChangeCoin ()
+function virtualShare:virtualShareChangeCoin ()
     local player=Isaac.GetPlayer()
     local RECOMMENDED_SHIFT_IDX = 35
-    if player:HasCollectible(ItemID.virtualShare) then
+    if player:HasCollectible(virtualShare.ID) then
         local sfx = SFXManager()
         local coinNum = player:GetNumCoins()
         local rng = RNG()
@@ -30,4 +34,6 @@ function LWaterMod:virtualShareChangeCoin ()
     end
 end
 
-LWaterMod:AddCallback(ModCallbacks.MC_POST_NEW_LEVEL,LWaterMod.virtualShareChangeCoin)
+LWaterMod:AddCallback(ModCallbacks.MC_POST_NEW_LEVEL,virtualShare.virtualShareChangeCoin)
+
+return virtualShare

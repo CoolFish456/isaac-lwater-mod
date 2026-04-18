@@ -1,14 +1,18 @@
-function LWaterMod:oneLWaterGet ()
+local oneLWater = {}
+oneLWater.name = "1L Water"
+oneLWater.ID = Isaac.GetItemIdByName("1L Water")
+
+function oneLWater:oneLWaterGet ()
     local player=Isaac.GetPlayer()
     player.AddSoulHearts(player,2)
 end
 
-LWaterMod:AddCallback(ModCallbacks.MC_POST_ADD_COLLECTIBLE,LWaterMod.oneLWaterGet,ItemID.oneLWater)
+LWaterMod:AddCallback(ModCallbacks.MC_POST_ADD_COLLECTIBLE,oneLWater.oneLWaterGet,oneLWater.ID)
 
-function LWaterMod:oneLWaterEvaluateCache (mod, flag)
+function oneLWater:oneLWaterEvaluateCache (mod, flag)
     local player=Isaac.GetPlayer()
-    local multiplier = player:GetCollectibleNum(ItemID.oneLWater)
-    if player:HasCollectible(ItemID.oneLWater) then
+    local multiplier = player:GetCollectibleNum(oneLWater.ID)
+    if player:HasCollectible(oneLWater.ID) then
         if flag == CacheFlag.CACHE_FIREDELAY then
             local addition = 0.35
             -- 修正，射速和射击延迟的换算见wiki
@@ -17,7 +21,7 @@ function LWaterMod:oneLWaterEvaluateCache (mod, flag)
     end
 end
 
-LWaterMod:AddCallback(ModCallbacks.MC_EVALUATE_CACHE,LWaterMod.oneLWaterEvaluateCache)
+LWaterMod:AddCallback(ModCallbacks.MC_EVALUATE_CACHE,oneLWater.oneLWaterEvaluateCache)
 
 -- ---@param direction Direction
 -- function LWaterMod:GetFireDirectionVector(direction)
@@ -38,7 +42,7 @@ LWaterMod:AddCallback(ModCallbacks.MC_EVALUATE_CACHE,LWaterMod.oneLWaterEvaluate
 local RECOMMENDED_SHIFT_IDX = 35
 
 ---@param tearEntity EntityTear
-function LWaterMod:oneLWaterTearCreep(tearEntity)
+function oneLWater:oneLWaterTearCreep(tearEntity)
     -- 在泪弹下生成水迹
     local data = tearEntity:GetData()
     if not data.oneLWaterTearShouldCreep then
@@ -52,7 +56,7 @@ function LWaterMod:oneLWaterTearCreep(tearEntity)
     local player=Isaac.GetPlayer()
     -- local rng = RNG()
     -- rng:SetSeed(Random(), RECOMMENDED_SHIFT_IDX)
-    if player:HasCollectible(ItemID.oneLWater) then
+    if player:HasCollectible(oneLWater.ID) then
         -- local tearCreepRNG = rng:RandomInt(6)
         -- if tearCreepRNG >= 4 then
         if data.creepCounter >= 4 then
@@ -71,10 +75,10 @@ function LWaterMod:oneLWaterTearCreep(tearEntity)
 end
 
 ---@param tearEntity EntityTear
-function LWaterMod:oneLWaterTearCreepGen(tearEntity)
+function oneLWater:oneLWaterTearCreepGen(tearEntity)
     -- 在泪弹生成时，决定是否生成水迹
     local player = Isaac.GetPlayer()
-    if not player:HasCollectible(ItemID.oneLWater) then
+    if not player:HasCollectible(oneLWater.ID) then
         return
     end
     -- 计算 Luck → 概率（线性插值）
@@ -93,6 +97,8 @@ function LWaterMod:oneLWaterTearCreepGen(tearEntity)
     data.creepCounter = 0
 end
 
-LWaterMod:AddCallback(ModCallbacks.MC_POST_TEAR_INIT,LWaterMod.oneLWaterTearCreepGen)
-LWaterMod:AddCallback(ModCallbacks.MC_POST_TEAR_UPDATE,LWaterMod.oneLWaterTearCreep)
+LWaterMod:AddCallback(ModCallbacks.MC_POST_TEAR_INIT,oneLWater.oneLWaterTearCreepGen)
+LWaterMod:AddCallback(ModCallbacks.MC_POST_TEAR_UPDATE,oneLWater.oneLWaterTearCreep)
+
+return oneLWater
 

@@ -21,3 +21,10 @@
     这话说出来我自己都绷不住：发射泪弹时额外触发铅笔的效果
     你已经失去理智了，先冷静一下：泪弹造成冰冻的效果并造成300%的伤害
 ]]--
+local somebodysQuotation = {}
+somebodysQuotation.name = "Somebody's Quotation"
+somebodysQuotation.ID = Isaac.GetItemIdByName("Somebody's Quotation")
+
+-- TODO
+
+return somebodysQuotation

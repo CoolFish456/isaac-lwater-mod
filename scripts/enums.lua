@@ -8,7 +8,7 @@ Collectibles.classicTasteShavedIce = require("scripts.items.collectibles.classic
 Collectibles.stopFemaleClothing = require("scripts.items.collectibles.stopfemaleclothing")
 Collectibles.koishisHat = require("scripts.items.collectibles.koishishat")
 Collectibles.lilHina = require("scripts.items.collectibles.lilhina")
-Collectibles.snakeBite = require("scripts.items.collectibles.snakebite")
+Collectibles.snakebite = require("scripts.items.collectibles.snakebite")
 
 LWaterMod.Collectibles = Collectibles
 -- trinkets

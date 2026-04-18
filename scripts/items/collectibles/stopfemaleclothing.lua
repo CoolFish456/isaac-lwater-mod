@@ -1,4 +1,8 @@
-function LWaterMod:stopFemaleClothingGet ()
+local stopFemaleClothing = {}
+stopFemaleClothing.name = "Stop Female Clothing"
+stopFemaleClothing.ID = Isaac.GetItemIdByName("Stop Female Clothing")
+
+function stopFemaleClothing:stopFemaleClothingGet ()
     -- 移除道具
     local player = Isaac.GetPlayer()
     -- local collectiblesCount = player:GetCollectibleCount()
@@ -17,16 +21,16 @@ function LWaterMod:stopFemaleClothingGet ()
     player.TryRemoveNullCostume(player,NullItemID.ID_MOM)
 end
 
-LWaterMod:AddCallback(ModCallbacks.MC_POST_ADD_COLLECTIBLE,LWaterMod.stopFemaleClothingGet,ItemID.stopFemaleClothing)
+LWaterMod:AddCallback(ModCallbacks.MC_POST_ADD_COLLECTIBLE,stopFemaleClothing.stopFemaleClothingGet,stopFemaleClothing.ID)
 
-function LWaterMod:stopFemaleClothingNewRoom ()
+function stopFemaleClothing:stopFemaleClothingNewRoom ()
     -- 进入新房间时，reroll含有妈妈标签的道具生成
     -- Test seed: W6QA REBX Greedier
     local player = Isaac.GetPlayer()
-    if not player:HasCollectible(ItemID.stopFemaleClothing) then
+    if not player:HasCollectible(stopFemaleClothing.ID) then
         return
     end
-    LWaterMod:stopFemaleClothingGet()
+    stopFemaleClothing:stopFemaleClothingGet()
     local roomEntities = Isaac.GetRoomEntities()
     if next(roomEntities) == nil then return end
     for i, entity in ipairs(roomEntities) do
@@ -44,13 +48,13 @@ function LWaterMod:stopFemaleClothingNewRoom ()
     end
 end
 
-LWaterMod:AddCallback(ModCallbacks.MC_POST_NEW_ROOM,LWaterMod.stopFemaleClothingNewRoom)
+LWaterMod:AddCallback(ModCallbacks.MC_POST_NEW_ROOM,stopFemaleClothing.stopFemaleClothingNewRoom)
 
 ---@param entity EntityPickup
-function LWaterMod:stopFemaleClothingGenItem (entity)
+function stopFemaleClothing:stopFemaleClothingGenItem (entity)
     -- 尝试生成含有妈妈标签的道具时，reroll生成
     local player = Isaac.GetPlayer()
-    if not player:HasCollectible(ItemID.stopFemaleClothing) then
+    if not player:HasCollectible(stopFemaleClothing.ID) then
         return
     end
     if entity.Type == EntityType.ENTITY_PICKUP and entity.Variant == PickupVariant.PICKUP_COLLECTIBLE then
@@ -66,5 +70,7 @@ function LWaterMod:stopFemaleClothingGenItem (entity)
     end
 end
 
-LWaterMod:AddCallback(ModCallbacks.MC_POST_PICKUP_INIT,LWaterMod.stopFemaleClothingGenItem)
+LWaterMod:AddCallback(ModCallbacks.MC_POST_PICKUP_INIT,stopFemaleClothing.stopFemaleClothingGenItem)
 -- TODO: 增加其他有关联的道具（需要人工统计）
+
+return stopFemaleClothing
