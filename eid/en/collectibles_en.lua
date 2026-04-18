@@ -58,6 +58,7 @@ EIDAddItem(ItemID.lilHina,{
     Name="Lil' Hina",
     Descriptions=[[Gain the "Lil' Hina" follower
     #The "Lil' Hina" follower follows the character and sprays a large number of tears around every 3 seconds when the character attacks, dealing 4.5 damage
+    #{{Luck}} {{ArrowDown}}-1 luck
     ]]
 })
 EIDAddItem(ItemID.snakebite,{

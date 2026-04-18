@@ -57,6 +57,7 @@ EIDAddItem(ItemID.lilHina,{
     Name="雏人偶宝宝",
     Descriptions=[[获得“雏人偶宝宝”跟班
     #“雏人偶宝宝”跟班跟随角色，角色攻击时，每隔3秒进行自转，向周围随机喷洒大量泪弹，造成4.5点伤害
+    #{{Luck}} {{ArrowDown}}持有时，-1幸运
     ]]
 })
 EIDAddItem(ItemID.snakebite,{

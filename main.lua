@@ -1,8 +1,10 @@
 LWaterMod = RegisterMod("L Water",1)
 -- put your scripts here
 include("scripts.items.collectibles.itemid")
-include("scripts.lib.tearfiredelay")
 include("scripts.enums")
+-- lib
+include("scripts.lib.tearfiredelay")
+include("scripts.lib.savedata")
 -- sfx
 include("scripts.sfx.modsound")
 -- EID
