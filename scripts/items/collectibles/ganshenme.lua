@@ -4,6 +4,7 @@ ganShenMe.ID = Isaac.GetItemIdByName("Gan Shen Me!")
 local RECOMMENDED_SHIFT_IDX = 35
 GanShenMeGuppyFlag=false
 
+---@param player EntityPlayer
 function ganShenMe:ganShenMeUse (collectibleID, rngObj, player, useFlags, activeSlot, varData)
     -- local player=Isaac.GetPlayer()
     if not player:HasCollectible(ganShenMe.ID) then

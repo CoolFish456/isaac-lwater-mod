@@ -1,3 +1,4 @@
+-- 已知问题：使用luamod热重载本mod后，本mod道具不生效的问题（原因未知）
 LWaterMod = RegisterMod("L Water",1)
 -- put your scripts here
 include("scripts.items.collectibles.itemid")

@@ -11,7 +11,7 @@
 
 ---
 
-## A small BoI mod inspired my a friend of mine, including some interesting mechanism and items
+## A small TBoI mod inspired my a friend of mine, including some interesting mechanism and items
 Welcome issues & discussions on tech. problems in modding~
 
 - Version: Rep (w/ Repentogon)

@@ -2,6 +2,7 @@ local snakebite = {}
 snakebite.name = "Snakebite"
 snakebite.ID = Isaac.GetItemIdByName("Snakebite")
 
+---@param player EntityPlayer
 function snakebite:snakebiteUse(collectibleID, rngObj, player, useFlags, activeSlot, varData)
     -- 使用后，对所有的敌怪赋予2秒中毒
         -- local player=Isaac.GetPlayer()
