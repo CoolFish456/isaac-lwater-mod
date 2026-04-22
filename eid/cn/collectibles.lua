@@ -44,8 +44,8 @@ EIDAddItem(cols.virtualShare.ID,{
 EIDAddItem(cols.koishisHat.ID,{
     Name="恋恋的帽子",
     Descriptions=[[{{Battery}}充能时间2秒
-    #使用时，丢出一个恋恋的帽子，对路径上的敌人造成每次5.5点的伤害并造成少量击退
-    #飞出一定距离后飞回玩家手中
+    #使用时，丢出一个恋恋的帽子，对路径上的敌人造成每次3.5点的伤害
+    #飞出一定距离后飞回玩家手中，回收过程中对路径上的敌人造成每次6.5点的伤害
     ]]
 })
 EIDAddItem(cols.stopFemaleClothing.ID,{

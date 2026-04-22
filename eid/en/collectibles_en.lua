@@ -44,8 +44,8 @@ EIDAddItem(cols.virtualShare.ID,{
 EIDAddItem(cols.koishisHat.ID,{
     Name="Koishi's Hat",
     Descriptions=[[{{Battery}} Charge time 2 seconds
-    #When used, throw a Koishi's Hat that deals 5.5 damage per hit and causes minor knockback to enemies on the path
-    #The hat will fly back to the player's hand after flying a certain distance
+    #When used, throw a Koishi's Hat that deals 3.5 damage per hit to enemies on the path
+    #The hat will fly back to the player's hand after flying a certain distance, dealing 6.5 damage per hit to enemies on the path during the return process
     ]]
 })
 EIDAddItem(cols.stopFemaleClothing.ID,{

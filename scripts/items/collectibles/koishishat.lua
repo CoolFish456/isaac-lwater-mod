@@ -3,6 +3,7 @@ koishisHat.name = "Koishi's Hat"
 koishisHat.ID = Isaac.GetItemIdByName("Koishi's Hat")
 
 KoishisHatLiftFlag = false
+local RECOMMENDED_SHIFT_IDX = 35
 
 ---@param player EntityPlayer
 function koishisHat:koishisHatUse(collectibleID, rngObj, player, useFlags, activeSlot, varData)
@@ -45,14 +46,56 @@ function koishisHat:koishisHatThrow(player)
             (Input.IsActionTriggered(ButtonAction.ACTION_SHOOTRIGHT, player.ControllerIndex))
         )then
             -- 丢出帽子射弹
-            -- TODO：道具兼容
             player:AnimateCollectible(koishisHat.ID ,"HideItem","PlayerPickup")
             -- Isaac.ConsoleOutput("Throw\n")
             player:DischargeActiveItem()
             KoishisHatLiftFlag = false
+            -- 检查方向
             local direction = player:GetFireDirection()
             local directionVector = LWaterMod:GetFireDirectionVector(direction)
+            local playerVelocity = player:GetVelocityBeforeUpdate()
+            Isaac.ConsoleOutput("Direction before: "..tostring(directionVector).."\n")
+            -- 考虑玩家移动时的惯性，射弹初始速度叠加玩家当前速度
+            directionVector = directionVector + (playerVelocity * 5)
+            Isaac.ConsoleOutput("Direction after: "..tostring(directionVector).."\n")
             -- Isaac.ConsoleOutput("Direction: "..direction.."\n")
+            -- local oneLWaterID = Isaac.GetItemIdByName("1L Water")
+            -- if player:HasCollectible(oneLWaterID) then
+            --     -- 道具兼容：生成两个射弹，发散一定角度
+            --     local angleOffset_1,angleOffset_2
+            --     local rng = RNG()
+            --     rng:SetSeed(Random(), RECOMMENDED_SHIFT_IDX)
+            --     angleOffset_1 = rng:RandomInt(10)
+            --     angleOffset_2 = rng:RandomInt(10)
+            --     local dir1=directionVector:Rotated(angleOffset_1)
+            --     local dir2=directionVector:Rotated(-angleOffset_2)
+            --     Isaac.ConsoleOutput("Angle Offset 1: "..tostring(dir1).." Angle Offset 2: "..tostring(dir2).."\n")
+            --     Isaac.Spawn(
+            --         Isaac.GetEntityTypeByName("Koishi's Hat Projectile"),
+            --         Isaac.GetEntityVariantByName("Koishi's Hat Projectile"),
+            --         Isaac.GetEntitySubTypeByName("Koishi's Hat Projectile"),
+            --         player.Position,
+            --         dir1,
+            --         player
+            --     )
+            --     Isaac.Spawn(
+            --         Isaac.GetEntityTypeByName("Koishi's Hat Projectile"),
+            --         Isaac.GetEntityVariantByName("Koishi's Hat Projectile"),
+            --         Isaac.GetEntitySubTypeByName("Koishi's Hat Projectile"),
+            --         player.Position,
+            --         dir2,
+            --         player
+            --     )
+            -- else
+            --     Isaac.Spawn(
+            --         Isaac.GetEntityTypeByName("Koishi's Hat Projectile"),
+            --         Isaac.GetEntityVariantByName("Koishi's Hat Projectile"),
+            --         Isaac.GetEntitySubTypeByName("Koishi's Hat Projectile"),
+            --         player.Position,
+            --         directionVector,
+            --         player
+            --     )
+            -- end
             Isaac.Spawn(
                 Isaac.GetEntityTypeByName("Koishi's Hat Projectile"),
                 Isaac.GetEntityVariantByName("Koishi's Hat Projectile"),
@@ -83,7 +126,7 @@ function LWaterMod:GetFireDirectionVector(direction)
     elseif direction == Direction.RIGHT then
         vector_direction = Vector(base_speed,0)
     else -- Default position
-        vector_direction = Vector(0,base_speed)
+        vector_direction = Vector(base_speed,0)
     end
     return vector_direction
 end
@@ -98,6 +141,12 @@ function koishisHat:ProjectileInit(effect)
         -- 根据玩家射击方向设置初始速度
         local direction = data.Owner:GetFireDirection()
         local directionVector = LWaterMod:GetFireDirectionVector(direction)
+        local playerVelocity = data.Owner:GetVelocityBeforeUpdate()
+        Isaac.ConsoleOutput("Direction before: "..tostring(directionVector).."\n")
+        -- 考虑玩家移动时的惯性，射弹初始速度叠加玩家当前速度
+        directionVector = directionVector + (playerVelocity * 1.0)
+        Isaac.ConsoleOutput("Direction after: "..tostring(directionVector).."\n")
+
         effect.Velocity = directionVector
         data.Velocity = directionVector
     end
@@ -106,7 +155,7 @@ function koishisHat:ProjectileInit(effect)
     data.MaxDistance = 233
     data.Travelled = 0
     data.State = "forward"
-    data.ReturnSpeed = 25
+    data.ReturnSpeed = 23.5
 end
 
 LWaterMod:AddCallback(ModCallbacks.MC_POST_EFFECT_INIT, koishisHat.ProjectileInit, Isaac.GetEntityVariantByName("Koishi's Hat Projectile"))
@@ -136,7 +185,17 @@ function koishisHat:ProjectileUpdate(effect)
             -- 撞墙后立即返回
             data.State = "return"
         end
-
+        -- 持续伤害敌人（发射阶段和回收阶段的伤害不同）
+        data.HitTimer = (data.HitTimer or 0) + 1
+        if data.HitTimer >= 2 then
+            data.HitTimer = 0
+            local enemies = Isaac.FindInRadius(effect.Position, effect.Size or 20, EntityPartition.ENEMY)
+            for _, enemy in ipairs(enemies) do
+                enemy:TakeDamage(4.5, DamageFlag.DAMAGE_CLONES, EntityRef(effect), 0)
+                -- TODO：少量击退
+                enemy.Velocity = enemy.Velocity + (enemy.Position - effect.Position):Normalized() * 2
+            end
+        end
     elseif data.State == "return" then
         -- 返回玩家
         local dir = (data.Owner.Position - effect.Position):Normalized()
@@ -146,16 +205,16 @@ function koishisHat:ProjectileUpdate(effect)
         if effect.Position:Distance(data.Owner.Position) < 20 then
             effect:Remove()
         end
-    end
-    -- 持续伤害敌人
-    data.HitTimer = (data.HitTimer or 0) + 1
-    if data.HitTimer >= 2 then
-        data.HitTimer = 0
-        local enemies = Isaac.FindInRadius(effect.Position, effect.Size or 20, EntityPartition.ENEMY)
-        for _, enemy in ipairs(enemies) do
-            enemy:TakeDamage(5.5, DamageFlag.DAMAGE_CLONES, EntityRef(effect), 0)
-            -- TODO：少量击退
-            enemy.Velocity = enemy.Velocity + (enemy.Position - effect.Position):Normalized() * 2
+         -- 持续伤害敌人（发射阶段和回收阶段的伤害不同）
+        data.HitTimer = (data.HitTimer or 0) + 1
+        if data.HitTimer >= 1 then
+            data.HitTimer = 0
+            local enemies = Isaac.FindInRadius(effect.Position, effect.Size or 20, EntityPartition.ENEMY)
+            for _, enemy in ipairs(enemies) do
+                enemy:TakeDamage(7.0, DamageFlag.DAMAGE_CLONES, EntityRef(effect), 0)
+                -- TODO：少量击退
+                enemy.Velocity = enemy.Velocity + (enemy.Position - effect.Position):Normalized() * 2
+            end
         end
     end
 end
