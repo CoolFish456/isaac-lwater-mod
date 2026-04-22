@@ -30,5 +30,6 @@
     <passive id="15" name="Coolheaded" gfx="_placeholder.png" description="You're out of control, just calm down" quality="3" tags="summonable nocantrip" cache="all"/>
     <!-- Not Registered -->
     <active id="16" name="Snakebite" gfx="snakebite_item.png" description="Retain. Apply 7 poison" quality="2" tags="summonable offensive" cache="all" maxcharges="2" shopprice="15"/>
+    <passive id="17" name="Demon Form" gfx="_placeholder.png" description="And now I will control you" quality="4" tags="summonable offensive nocantrip devil" cache="all" devilprice="2"/>
     <!-- Done -->
 </items>

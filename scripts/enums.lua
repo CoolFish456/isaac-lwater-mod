@@ -9,6 +9,7 @@ Collectibles.stopFemaleClothing = require("scripts.items.collectibles.stopfemale
 Collectibles.koishisHat = require("scripts.items.collectibles.koishishat")
 Collectibles.lilHina = require("scripts.items.collectibles.lilhina")
 Collectibles.snakebite = require("scripts.items.collectibles.snakebite")
+Collectibles.demonForm = require("scripts.items.collectibles.demonform")
 
 LWaterMod.Collectibles = Collectibles
 -- trinkets

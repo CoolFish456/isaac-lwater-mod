@@ -68,6 +68,12 @@ EIDAddItem(cols.snakebite.ID,{
     #{{Warning}} No effect on bosses
     ]]
 })
+EIDAddItem(cols.demonForm.ID,{
+    Name="恶魔形态",
+    Descriptions=[[{{Damage}} {{ArrowUp}}+2 damage
+    #{{Damage}} {{ArrowUp}}+2 damage when entering the next floor
+    ]]
+})
 
 local language = "en_us"
 local descriptions = EID.descriptions[language]

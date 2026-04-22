@@ -24,6 +24,7 @@
     <Pool Name="devil">
         <Item Name="Gan Shen Me!" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
         <Item Name="Lil' Hina" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+        <Item Name="Demon Form" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
     <Pool Name="redChest">
         <Item Name="Gan Shen Me!" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -68,6 +69,7 @@
     <Pool Name="greedDevil">
         <Item Name="Gan Shen Me!" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
         <Item Name="Lil' Hina" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+        <Item Name="Demon Form" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
     <Pool Name="greedSecret">
         <Item Name="Koishi's Hat" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
