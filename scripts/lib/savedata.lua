@@ -15,7 +15,9 @@ function LWaterMod:loadsetting(continue) --进入游戏时加载数据
         LWaterMod.Config[tostring(i)] = SaveState[i]
     end
     if not continue then --如果是新一轮游戏的话，清除上一局的角色信息
-        LWaterMod.Config.PlayerInfo = {}
+        for i, v in pairs(LWaterMod.Config) do
+            LWaterMod.Config[i] = nil
+        end
 	end
 end
 

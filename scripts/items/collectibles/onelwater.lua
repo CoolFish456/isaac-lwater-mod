@@ -83,8 +83,9 @@ function oneLWater:oneLWaterTearCreepGen(tearEntity)
     end
     -- 计算 Luck → 概率（线性插值）
     local luck = player.Luck
-    local clampedLuck = math.max(0, math.min(luck, 15))  -- 限制在 0~15
-    local probability = 0.12 + (0.75 - 0.12) * (clampedLuck / 10)  -- 12% → 75%
+    local maxLuck = 15
+    local clampedLuck = math.max(0, math.min(luck, maxLuck))  -- 限制在 0~15
+    local probability = 0.12 + (0.75 - 0.12) * (clampedLuck / maxLuck)  -- 12% → 75%
     -- 使用 RNG() 生成随机数
     local rng = RNG()
     rng:SetSeed(Random(), RECOMMENDED_SHIFT_IDX)

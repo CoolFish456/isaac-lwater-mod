@@ -71,7 +71,7 @@ EIDAddItem(cols.snakebite.ID,{
 EIDAddItem(cols.demonForm.ID,{
     Name="恶魔形态",
     Descriptions=[[{{Damage}} {{ArrowUp}}+2 damage
-    #{{Damage}} {{ArrowUp}}+2 damage when entering the next floor
+    #{{Damage}} {{ArrowUp}}+3 damage when entering the next floor
     ]]
 })
 

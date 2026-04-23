@@ -10,18 +10,18 @@
     <passive id="5" name="Classic Taste Shaved Ice" gfx="classictasteshavedice_item.png" description="Eating ice is not harmful..." quality="3" tags="offensive summonable nocantrip " cache="all"/>
     <!-- Done -->
     <active id="6" name="Koishi's Hat" gfx="koishishat_item.png" description="Stop putting hats on me" quality="2" maxcharges="60" chargetype="timed" tags="offensive summonable nocantrip" cache="all"/>
-    <!-- Registered -->
+    <!-- Done -->
     <passive id="7" name="Kagiyama Hina's Headband" gfx="_placeholder.png" description="A feeling of wanting to spin" quality="1" tags="offensive summonable" cache="all"/>
     <!-- Not Registered -->
     <passive id="8" name="Stop Female Clothing" gfx="stopfemaleclothing_item.png" description="How dare you?!" quality="1" tags="offensive summonable nocantrip" cache="all"/>
     <!-- Done -->
-    <passive id="9" name="2L Water" gfx="_placeholder.png" description="Double as before" quality="2" tags="offensive summonable nocantrip" cache="all"/>
+    <passive id="9" name="2L Water" gfx="_placeholder.png" description="Doubled as before" quality="2" tags="offensive summonable nocantrip" cache="all"/>
     <!-- Not Registered -->
     <passive id="10" name="5L Water" gfx="_placeholder.png" description="No way..." quality="4" tags="offensive summonable nocantrip" cache="all"/>
     <!-- Not Registered -->
     <active id="11" name="The Past History of ** Univ." gfx="_placeholder.png" description="???" quality="2" maxcharges="6" tags="offensive summonable" cache="all"/>
     <!-- Not Registered -->
-    <familiar id="12" name="Lil' Hina" gfx="_placeholder.png" description="Spin me harder" quality="2" tags="offensive summonable nocantrip baby" cache="all" devilprice="1"/>
+    <familiar id="12" name="Lil' Hina" gfx="_placeholder.png" description="You can spin me harder" quality="2" tags="offensive summonable nocantrip baby" cache="all" devilprice="1"/>
     <!-- Registered -->
     <active id="13" name="500mL Water" gfx="_placeholder.png" description="Take a drink" quality="1" tags="summonable" cache="all" maxcharges="1"/>
     <!-- Not Registered -->
@@ -30,6 +30,7 @@
     <passive id="15" name="Coolheaded" gfx="_placeholder.png" description="You're out of control, just calm down" quality="3" tags="summonable nocantrip" cache="all"/>
     <!-- Not Registered -->
     <active id="16" name="Snakebite" gfx="snakebite_item.png" description="Retain. Apply 7 poison" quality="2" tags="summonable offensive" cache="all" maxcharges="2" shopprice="15"/>
-    <passive id="17" name="Demon Form" gfx="_placeholder.png" description="And now I will control you" quality="4" tags="summonable offensive nocantrip devil" cache="all" devilprice="2"/>
     <!-- Done -->
+    <passive id="17" name="Demon Form" gfx="_placeholder.png" description="And now I will control you" quality="4" tags="summonable offensive nocantrip devil" cache="all" devilprice="2"/>
+    <!-- Done Without Sprite -->
 </items>
