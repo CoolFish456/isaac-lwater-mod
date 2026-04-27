@@ -6,6 +6,8 @@ function stopFemaleClothing:stopFemaleClothingGet ()
     -- 移除道具
     local player = Isaac.GetPlayer()
     -- local collectiblesCount = player:GetCollectibleCount()
+    -- 飞八分钱
+    player:AddCoins(-8)
     local collectiblesList = player:GetCollectiblesList()
     -- Isaac.ConsoleOutput(tostring(collectiblesList[CollectibleType.COLLECTIBLE_SAD_ONION]))
     for cType, num in pairs(collectiblesList) do

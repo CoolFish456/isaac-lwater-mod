@@ -52,6 +52,7 @@ EIDAddItem(cols.stopFemaleClothing.ID,{
     Name="不准女装",
     Descriptions=[[拾取时，移除玩家身上所有含有{{Mom}}“妈妈”标签的道具
     #本局游戏内也无法遇见这些道具
+    #拾取时，飞八分钱
     ]]
 })
 EIDAddItem(cols.lilHina.ID,{

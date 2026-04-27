@@ -52,6 +52,7 @@ EIDAddItem(cols.stopFemaleClothing.ID,{
     Name="Stop Female Clothing",
     Descriptions=[[Remove all items with the {{Mom}} "Mom" tag from the player when picked up
     #These items will also not appear in the current run
+    #Lose 8 coins when picked up, but why?
     ]]
 })
 EIDAddItem(cols.lilHina.ID,{
