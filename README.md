@@ -1,3 +1,4 @@
+![干什么！](https://github.com/CoolFish456/isaac-lwater-mod/tree/master/resources/gfx/lwater/items/collectibles/ganshenme_item.png)
 ## 基于对某某的致敬制作的小型以撒mod，包括一些奇怪的道具和机制
 欢迎提issue提交你的鬼点子/灵感菇~
 
