@@ -75,6 +75,12 @@ EIDAddItem(cols.demonForm.ID,{
     #{{Damage}} {{ArrowUp}}+3 damage when entering the next floor
     ]]
 })
+EIDAddItem(cols.hugeCapsule.ID,{
+    Name="巨大扭蛋",
+    Descriptions=[[{{Warning}} One-time
+    #After use, randomly select one of the passive items the character already has and give the character 32 copies of that item
+    ]]
+})
 
 local language = "en_us"
 local descriptions = EID.descriptions[language]

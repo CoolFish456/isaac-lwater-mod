@@ -75,6 +75,12 @@ EIDAddItem(cols.demonForm.ID,{
     #{{Damage}} 进入新的楼层时，{{ArrowUp}}+3伤害修正
     ]]
 })
+EIDAddItem(cols.hugeCapsule.ID,{
+    Name="巨大扭蛋",
+    Descriptions=[[{{Warning}} 一次性
+    #使用后，随机选取角色已经拥有的一个被动道具，给予角色该道具的32个复制品
+    ]]
+})
 
 
 local language = "zh_cn"

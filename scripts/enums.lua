@@ -10,6 +10,7 @@ Collectibles.koishisHat = require("scripts.items.collectibles.koishishat")
 Collectibles.lilHina = require("scripts.items.collectibles.lilhina")
 Collectibles.snakebite = require("scripts.items.collectibles.snakebite")
 Collectibles.demonForm = require("scripts.items.collectibles.demonform")
+Collectibles.hugeCapsule = require("scripts.items.collectibles.hugeCapsule")
 
 LWaterMod.Collectibles = Collectibles
 -- trinkets
